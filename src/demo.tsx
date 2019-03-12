@@ -5,7 +5,7 @@ import * as ReactDOM from 'react-dom';
 import RoadmapProgress from '@/components/RoadmapProgress';
 
 function bootstrap() {
-    const $root = document.getElementById('#app-root');
+    const $root = document.getElementById('app-root');
     ReactDOM.render(<RoadmapProgress />, $root);
 }
 

@@ -35,7 +35,7 @@
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "./node_modules/.bin/jest --watch",
-    "demo": "cross-env ws --spa demo/index.html"
+    "demo": "cross-env ws --directory demo/"
   },
   "dependencies": {
     "react": "^16.8.4",
