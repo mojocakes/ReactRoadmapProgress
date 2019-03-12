@@ -1,0 +1,26 @@
+{
+    "version": "3.3.3",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es6",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "jsx": "react",
+        "lib": [
+            "es5",
+            "es6",
+            "es2015",
+            "dom"
+        ],
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
+}
