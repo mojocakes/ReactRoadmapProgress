@@ -1,5 +1,6 @@
 {
+    "/build/js/demo.js": "/build/js/demo.js",
     "/build/js/index.js": "/build/js/index.js",
     "/build/css/index.css": "/build/css/index.css",
-    "/demo/demo.js": "/demo/demo.js"
+    "/build/demo.html": "/build/demo.html"
 }
