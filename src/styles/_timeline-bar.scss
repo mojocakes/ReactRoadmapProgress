@@ -1,0 +1,67 @@
+$pendingColor: rgb(154, 216, 154);
+$completeColor: rgb(0, 177, 0);
+
+.timeline-bar {
+    position: relative;
+    display: flex;
+    align-self: stretch;
+    width: 10px;
+    background: rgb(224, 224, 224);
+
+    &::after {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+    }
+
+    &--background-pending {
+        background: $pendingColor;
+    }
+    &--background-complete {
+        background: $completeColor;
+    }
+    
+    &--background-rounded-start {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    &--background-rounded-end {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    &--bar-rounded-start {
+        &::after {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+    &--bar-rounded-end {
+        &::after {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    &--bar-pending,
+    &--bar-complete {
+        &::after {
+            display: block;
+        }
+    }
+
+    &--bar-pending {
+        &::after {
+            background: $pendingColor;
+        }
+    }
+    &--bar-complete {
+        &::after {
+            background: $completeColor;
+        }
+    }
+}
