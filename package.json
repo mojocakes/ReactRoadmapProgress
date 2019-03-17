@@ -2,7 +2,7 @@
   "name": "react-roadmap-progress",
   "version": "1.0.0",
   "description": "Displays your roadmap progress in a timeline format. Built in ReactJS.",
-  "main": "build/index.js",
+  "main": "dist/js/index.js",
   "repository": "git@github.com:mojocakes/ReactRoadmapProgress.git",
   "author": "James Cook <jamespetercook@googlemail.com>",
   "license": "MIT",
