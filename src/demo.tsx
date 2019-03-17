@@ -3,52 +3,54 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // > components
 import RoadmapProgress from '@/components/RoadmapProgress';
-import Milestone from '@/components/Milestone';
 
-function bootstrap() {
+/**
+ * Renders demo app to the DOM
+ * 
+ * @returns {void}
+ */
+function bootstrap(): void {
+    const milestones = [
+        {
+            title: 'Launch Company',
+            version: '0.0.1',
+            description: <p>Easy, right 🤷‍♂️</p>,
+            complete: true,
+        },
+        {
+            title: 'Publish Roadmap',
+            version: '0.2.0',
+            description: <p>Dream big 💡</p>,
+            complete: true,
+        },
+        {
+            title: 'Design Product',
+            version: '0.3.0',
+            description: <p>Doin some sketches</p>,
+            complete: false,
+        },
+        {
+            title: 'Development',
+            version: '0.4.0',
+            description: <p>Clone Uber, add sandwiches</p>,
+            complete: true,
+        },
+        {
+            title: 'Beta Launch',
+            version: '0.9.0',
+            description: <p>Invitation only 🎟</p>,
+            complete: false,
+        },
+        {
+            title: '$$Profit??',
+            version: '1.0.0',
+            description: <p>🎉</p>,
+            complete: false,
+        },
+    ];
+
     const $root = document.getElementById('app-root');
-    ReactDOM.render(
-        <>
-            <RoadmapProgress />
-            <br /><br /><br />
-            <Milestone
-                milestone={{
-                    title: 'Milestone 3',
-                    version: '0.3.0',
-                    complete: false,
-                }}
-                timelineBarProps={{
-                    backgroundRoundedStart: true,
-                }}
-            />
-            <Milestone
-                milestone={{
-                    title: 'Milestone 2',
-                    version: '0.2.0',
-                    complete: false,
-                }}
-                timelineBarProps={{
-                    barType: 'pending',
-                    barRoundedStart: true,
-                }}
-            />
-            <Milestone
-                milestone={{
-                    title: 'Publish Roadmap',
-                    version: '0.1.0',
-                    description: <p>Here it is! If you like this layout I've released it as an open source React component.</p>,
-                    complete: true,
-                }}
-                timelineBarProps={{
-                    backgroundType: 'pending',
-                    barType: 'complete',
-                    barRoundedStart: true,
-                    backgroundRoundedEnd: true,
-                    barRoundedEnd: true,
-                }}
-            />
-        </>
-    , $root);
+    ReactDOM.render(<RoadmapProgress milestones={milestones} />, $root);
 }
 
 bootstrap();

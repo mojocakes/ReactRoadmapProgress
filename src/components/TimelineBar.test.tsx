@@ -69,5 +69,10 @@ describe('components/<TimelineBar>', () => {
     it('should NOT add a class when "barType" prop is "none"', () => {
         expect(getContainer({ barType: 'none' })
             .hasClass('timeline-bar--bar-none')).toBeFalsy();
+        });
+        
+    it('should add a class when "peakHighlight" is "true"', () => {
+        expect(getContainer({ peakHighlight: true, })
+            .hasClass('timeline-bar--bar-peak-highlight')).toBeTruthy();
     });
 });

@@ -1,12 +1,9 @@
-$pendingColor: rgb(154, 216, 154);
-$completeColor: rgb(0, 177, 0);
-
 .timeline-bar {
     position: relative;
     display: flex;
     align-self: stretch;
     width: 10px;
-    background: rgb(224, 224, 224);
+    background: $colorGrey;
 
     &::after {
         position: absolute;
@@ -19,10 +16,10 @@ $completeColor: rgb(0, 177, 0);
     }
 
     &--background-pending {
-        background: $pendingColor;
+        background: $colorPendingMilestone;
     }
     &--background-complete {
-        background: $completeColor;
+        background: $colorCompleteMilestone;
     }
     
     &--background-rounded-start {
@@ -56,12 +53,23 @@ $completeColor: rgb(0, 177, 0);
 
     &--bar-pending {
         &::after {
-            background: $pendingColor;
+            background: $colorPendingMilestone;
         }
     }
     &--bar-complete {
         &::after {
-            background: $completeColor;
+            background: $colorCompleteMilestone;
+        }
+    }
+
+    &--bar-peak-highlight {
+        &::after {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00d30e+0,4ad300+12,00c109+36,00b100+100 */
+            background: #00d30e; /* Old browsers */
+            background: -moz-linear-gradient(top, #00d30e 0%, #4ad300 12%, #00c109 36%, #00b100 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #00d30e 0%,#4ad300 12%,#00c109 36%,#00b100 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #00d30e 0%,#4ad300 12%,#00c109 36%,#00b100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d30e', endColorstr='#00b100',GradientType=0 ); /* IE6-9 */
         }
     }
 }
