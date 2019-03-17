@@ -1,0 +1,75 @@
+.timeline-bar {
+    position: relative;
+    display: flex;
+    align-self: stretch;
+    width: 10px;
+    background: $colorGrey;
+
+    &::after {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+    }
+
+    &--background-pending {
+        background: $colorPendingMilestone;
+    }
+    &--background-complete {
+        background: $colorCompleteMilestone;
+    }
+    
+    &--background-rounded-start {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    &--background-rounded-end {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    
+    &--bar-rounded-start {
+        &::after {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+    &--bar-rounded-end {
+        &::after {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    &--bar-pending,
+    &--bar-complete {
+        &::after {
+            display: block;
+        }
+    }
+
+    &--bar-pending {
+        &::after {
+            background: $colorPendingMilestone;
+        }
+    }
+    &--bar-complete {
+        &::after {
+            background: $colorCompleteMilestone;
+        }
+    }
+
+    &--bar-peak-highlight {
+        &::after {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00d30e+0,4ad300+12,00c109+36,00b100+100 */
+            background: #00d30e; /* Old browsers */
+            background: -moz-linear-gradient(top, #00d30e 0%, #4ad300 12%, #00c109 36%, #00b100 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #00d30e 0%,#4ad300 12%,#00c109 36%,#00b100 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #00d30e 0%,#4ad300 12%,#00c109 36%,#00b100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d30e', endColorstr='#00b100',GradientType=0 ); /* IE6-9 */
+        }
+    }
+}

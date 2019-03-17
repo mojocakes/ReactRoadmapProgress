@@ -1,0 +1,17 @@
+// move me
+$colorBlack: #333;
+$colorGrey: rgb(224, 224, 224);
+$colorPendingMilestone: rgb(154, 216, 154);
+$colorCompleteMilestone: rgb(0, 177, 0);
+
+body {
+    font: 200 1em Helvetica, sans-serif;
+}
+h2 {
+    margin: 0 0 14px 0;
+    font-size: 1.4em;
+}
+
+
+@import 'milestone';
+@import 'timeline-bar';

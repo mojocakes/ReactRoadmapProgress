@@ -1,0 +1,50 @@
+{
+  "name": "react-roadmap-progress",
+  "version": "1.0.0",
+  "description": "Displays your roadmap progress in a timeline format. Built in ReactJS.",
+  "main": "dist/js/index.js",
+  "repository": "git@github.com:mojocakes/ReactRoadmapProgress.git",
+  "author": "James Cook <jamespetercook@googlemail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/enzyme": "^3.9.0",
+    "@types/jest": "^24.0.5",
+    "@types/jquery": "^3.3.29",
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "babel-jest": "^24.5.0",
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "jest": "24.0.0",
+    "laravel-mix": "^4.0.14",
+    "local-web-server": "^2.6.1",
+    "node-sass": "^4.11.0",
+    "resolve-url-loader": "2.3.2",
+    "sass": "^1.17.0",
+    "sass-loader": "7.*",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "./node_modules/.bin/jest --config ./jest.config.js --watch",
+    "demo": "cross-env ws --directory build/ --static.index demo.html"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "semver": "^5.6.0",
+    "semver-sort": "^0.0.4"
+  }
+}
