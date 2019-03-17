@@ -16,16 +16,20 @@ export interface iProps {
 export class Milestone extends React.Component<iProps> {
     render() {
         const { milestone, timelineBarProps } = this.props;
+        const containerClassNames = [
+            'milestone',
+            milestone.complete ? 'milestone--complete' : '',
+        ];
 
         return (
-            <div className="milestone">
+            <div className={containerClassNames.join(' ')}>
                 <div className="milestone__timeline">
                     <TimelineBar {...timelineBarProps} />
                 </div>
                 <div className="milestone__timeline-point" />
                 <div className="milestone__content">
-                    {milestone.version ? <span className="milestone__version">{milestone.version}</span> : null}
                     <h2 className="milestone__title">{milestone.title}</h2>
+                    {milestone.version ? <span className="milestone__version">{milestone.version}</span> : null}
                     {milestone.description ? <div className="milestone__description">{milestone.description}</div> : null}
                 </div>
             </div>

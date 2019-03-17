@@ -16,6 +16,7 @@ export const TimelineBar: React.SFC<iProps> = (props: iProps) => {
         barRoundedStart,
         barRoundedEnd,
         barType,
+        peakHighlight,
     } = props;
     
     const classNames = [
@@ -26,6 +27,7 @@ export const TimelineBar: React.SFC<iProps> = (props: iProps) => {
         barRoundedStart ? 'timeline-bar--bar-rounded-start' : '',
         barRoundedEnd ? 'timeline-bar--bar-rounded-end' : '',
         barType && barType !== 'none' ? `timeline-bar--bar-${barType}` : '',
+        peakHighlight ? 'timeline-bar--bar-peak-highlight' : '',
     ];
 
     return (
