@@ -35,6 +35,10 @@ describe('components/<Milestone>', () => {
         expect(component.find('.milestone').hasClass('milestone--complete')).toBeTruthy();
     });
 
+    it('adds a version anchor to the container', () => {
+        expect(component.find('.milestone').prop('id')).toBe(defaultProps.milestone.version);
+    });
+
     it('renders the title', () => {
         const $title = component.find('.milestone__title');
         expect($title.exists()).toBeTruthy();

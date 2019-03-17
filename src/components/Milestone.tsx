@@ -22,7 +22,7 @@ export class Milestone extends React.Component<iProps> {
         ];
 
         return (
-            <div className={containerClassNames.join(' ')}>
+            <div id={milestone.version} className={containerClassNames.join(' ')}>
                 <div className="milestone__timeline">
                     <TimelineBar {...timelineBarProps} />
                 </div>
