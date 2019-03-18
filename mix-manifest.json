@@ -1,4 +1,6 @@
 {
-    "/dist/js/index.js": "/dist/js/index.js",
-    "/dist/css/index.css": "/dist/css/index.css"
+    "/build/js/demo.js": "/build/js/demo.js",
+    "/build/js/index.js": "/build/js/index.js",
+    "/build/css/index.css": "/build/css/index.css",
+    "/build/demo.html": "/build/demo.html"
 }
