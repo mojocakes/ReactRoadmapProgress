@@ -57,8 +57,8 @@ var Milestone = /** @class */ (function (_super) {
                 React.createElement(TimelineBar_1.default, __assign({}, timelineBarProps))),
             React.createElement("div", { className: "milestone__timeline-point" }),
             React.createElement("div", { className: "milestone__content" },
-                React.createElement("h2", { className: "milestone__title" }, milestone.title),
                 milestone.version ? React.createElement("span", { className: "milestone__version" }, milestone.version) : null,
+                React.createElement("h2", { className: "milestone__title" }, milestone.title),
                 milestone.description ? React.createElement("div", { className: "milestone__description" }, milestone.description) : null)));
     };
     return Milestone;
