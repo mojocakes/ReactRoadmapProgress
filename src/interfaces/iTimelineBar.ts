@@ -5,5 +5,6 @@ export default interface iTimelineBar {
     barRoundedStart?: boolean;
     barRoundedEnd?: boolean;
     barType?: 'complete' | 'pending' | 'none';
+    barHeightPercent?: number;
     peakHighlight?: boolean;
 }

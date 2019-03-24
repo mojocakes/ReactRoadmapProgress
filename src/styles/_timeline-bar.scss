@@ -4,16 +4,7 @@
     align-self: stretch;
     width: 10px;
     background: $colorGrey;
-
-    &::after {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        content: '';
-    }
+    // border-top: 1px solid black;
 
     &--background-pending {
         background: $colorPendingMilestone;
@@ -32,13 +23,13 @@
     }
     
     &--bar-rounded-start {
-        &::after {
+        .timeline-bar__content {
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
     }
     &--bar-rounded-end {
-        &::after {
+        .timeline-bar__content {
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
@@ -46,24 +37,24 @@
 
     &--bar-pending,
     &--bar-complete {
-        &::after {
+        .timeline-bar__content {
             display: block;
         }
     }
 
     &--bar-pending {
-        &::after {
+        .timeline-bar__content {
             background: $colorPendingMilestone;
         }
     }
     &--bar-complete {
-        &::after {
+        .timeline-bar__content {
             background: $colorCompleteMilestone;
         }
     }
 
     &--bar-peak-highlight {
-        &::after {
+        .timeline-bar__content {
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00d30e+0,4ad300+12,00c109+36,00b100+100 */
             background: #00d30e; /* Old browsers */
             background: -moz-linear-gradient(top, #00d30e 0%, #4ad300 12%, #00c109 36%, #00b100 100%); /* FF3.6-15 */
@@ -71,5 +62,14 @@
             background: linear-gradient(to bottom, #00d30e 0%,#4ad300 12%,#00c109 36%,#00b100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d30e', endColorstr='#00b100',GradientType=0 ); /* IE6-9 */
         }
+    }
+
+    &__content {
+        position: absolute;
+        display: none;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 0; // height property will be set inline
     }
 }

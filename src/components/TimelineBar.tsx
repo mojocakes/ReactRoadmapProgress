@@ -16,6 +16,7 @@ export const TimelineBar: React.SFC<iProps> = (props: iProps) => {
         barRoundedStart,
         barRoundedEnd,
         barType,
+        barHeightPercent = 100,
         peakHighlight,
     } = props;
     
@@ -31,7 +32,9 @@ export const TimelineBar: React.SFC<iProps> = (props: iProps) => {
     ];
 
     return (
-        <div className={classNames.join(' ')} />
+        <div className={classNames.join(' ')}>
+            <div className="timeline-bar__content" style={{ height: `${barHeightPercent}%` }} />
+        </div>
     );
 };
 

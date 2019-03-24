@@ -29,7 +29,23 @@ describe('components/<Milestone>', () => {
         component.setProps({
             milestone: {
                 ...defaultProps.milestone,
+                complete: 30,  
+            },
+        });
+        expect(component.find('.milestone').hasClass('milestone--complete')).toBeFalsy();
+
+        component.setProps({
+            milestone: {
+                ...defaultProps.milestone,
                 complete: true,  
+            },
+        });
+        expect(component.find('.milestone').hasClass('milestone--complete')).toBeTruthy();
+
+        component.setProps({
+            milestone: {
+                ...defaultProps.milestone,
+                complete: 100,  
             },
         });
         expect(component.find('.milestone').hasClass('milestone--complete')).toBeTruthy();
