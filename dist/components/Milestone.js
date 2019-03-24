@@ -50,7 +50,7 @@ var Milestone = /** @class */ (function (_super) {
         var _a = this.props, milestone = _a.milestone, timelineBarProps = _a.timelineBarProps;
         var containerClassNames = [
             'milestone',
-            milestone.complete ? 'milestone--complete' : '',
+            milestone.complete && (milestone.complete === true || milestone.complete >= 100) ? 'milestone--complete' : '',
         ];
         return (React.createElement("div", { id: milestone.version, className: containerClassNames.join(' ') },
             React.createElement("div", { className: "milestone__timeline" },
