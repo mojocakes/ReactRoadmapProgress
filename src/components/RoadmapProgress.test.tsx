@@ -93,7 +93,6 @@ describe('components/<RoadmapProgress>', () => {
             expect(this.func([milestoneIncomplete, milestoneComplete, milestoneIncomplete], 1).barRoundedStart).toBe(true);
         });
 
-
         it('sets "barRoundedEnd" to "true" if the milestone is complete, and the previous milestone is not', () => {
             const milestoneComplete: iMilestone = {
                 version: '0.0.1',
@@ -103,6 +102,7 @@ describe('components/<RoadmapProgress>', () => {
             const milestoneIncomplete: iMilestone = {
                 version: '0.0.2',
                 title: 'test milestone',
+                complete: 10,
             };
             expect(this.func([milestoneIncomplete, milestoneComplete], 1).barRoundedEnd).toBe(true);
         });
@@ -137,6 +137,15 @@ describe('components/<RoadmapProgress>', () => {
                 complete: true,
             };
             expect(this.func([milestoneComplete, milestoneIncomplete], 0).barType).toBe('pending');
+        });
+
+        it('sets "barHeightPercent" to 100 if the milestone is complete', () => {
+            const milestoneComplete: iMilestone = {
+                version: '0.0.19',
+                title: 'test milestone',
+                complete: true,
+            };
+            expect(this.func([milestoneComplete], 0).barHeightPercent).toBe(100);
         });
 
         it('sets "peakHighlight" to "true" if the milestone is the last complete, and all previous milestones are complete', () => {

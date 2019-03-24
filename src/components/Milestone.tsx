@@ -18,7 +18,7 @@ export class Milestone extends React.Component<iProps> {
         const { milestone, timelineBarProps } = this.props;
         const containerClassNames = [
             'milestone',
-            milestone.complete ? 'milestone--complete' : '',
+            milestone.complete && (milestone.complete === true || milestone.complete >= 100) ? 'milestone--complete' : '',
         ];
 
         return (

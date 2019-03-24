@@ -40,7 +40,7 @@ function bootstrap(): void {
             title: 'Development',
             version: '0.4.0',
             description: <p>Clone Uber, add sandwiches</p>,
-            complete: true,
+            complete: 60,
         },
         {
             title: 'Beta Launch',
