@@ -11,6 +11,27 @@ h2 {
     margin: 0 0 14px 0;
     font-size: 1.4em;
 }
+ul {
+    padding: 0 0 0 24px;
+
+    li {
+        position: relative;
+        margin: 8px 0;
+        list-style: none;
+        // font-size: 0.9em;
+
+        &:before {
+            position: absolute;
+            top: 2px;
+            bottom: 3px;
+            left: -8px;
+            width: 3px;
+            content: '';
+            background: $colorBlack;
+            border-radius: 3px;
+        }
+    }
+}
 
 
 @import 'milestone';

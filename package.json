@@ -1,6 +1,6 @@
 {
   "name": "react-roadmap-progress",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Displays your roadmap progress in a timeline format. Built in ReactJS.",
   "main": "dist/index.js",
   "repository": "git@github.com:mojocakes/ReactRoadmapProgress.git",
@@ -36,7 +36,7 @@
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "cross-env ./node_modules/.bin/tsc --project tsconfig.json && npm run production",
+    "prod": "cross-env ./node_modules/.bin/tsc --project tsconfig.json --outDir dist --declaration && npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "./node_modules/.bin/jest --config ./jest.config.js --watch",
     "demo": "cross-env ws --directory build/ --static.index demo.html"

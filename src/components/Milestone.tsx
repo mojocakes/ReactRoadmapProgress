@@ -28,8 +28,8 @@ export class Milestone extends React.Component<iProps> {
                 </div>
                 <div className="milestone__timeline-point" />
                 <div className="milestone__content">
-                    <h2 className="milestone__title">{milestone.title}</h2>
                     {milestone.version ? <span className="milestone__version">{milestone.version}</span> : null}
+                    <h2 className="milestone__title">{milestone.title}</h2>
                     {milestone.description ? <div className="milestone__description">{milestone.description}</div> : null}
                 </div>
             </div>
