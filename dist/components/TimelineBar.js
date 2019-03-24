@@ -14,7 +14,7 @@ var React = __importStar(require("react"));
  * Renders a timeline bar (intended to build a bigger bar when places together)
  */
 exports.TimelineBar = function (props) {
-    var backgroundType = props.backgroundType, backgroundRoundedStart = props.backgroundRoundedStart, backgroundRoundedEnd = props.backgroundRoundedEnd, barRoundedStart = props.barRoundedStart, barRoundedEnd = props.barRoundedEnd, barType = props.barType, peakHighlight = props.peakHighlight;
+    var backgroundType = props.backgroundType, backgroundRoundedStart = props.backgroundRoundedStart, backgroundRoundedEnd = props.backgroundRoundedEnd, barRoundedStart = props.barRoundedStart, barRoundedEnd = props.barRoundedEnd, barType = props.barType, _a = props.barHeightPercent, barHeightPercent = _a === void 0 ? 100 : _a, peakHighlight = props.peakHighlight;
     var classNames = [
         'timeline-bar',
         backgroundType && backgroundType !== 'none' ? "timeline-bar--background-" + backgroundType : '',
@@ -25,7 +25,8 @@ exports.TimelineBar = function (props) {
         barType && barType !== 'none' ? "timeline-bar--bar-" + barType : '',
         peakHighlight ? 'timeline-bar--bar-peak-highlight' : '',
     ];
-    return (React.createElement("div", { className: classNames.join(' ') }));
+    return (React.createElement("div", { className: classNames.join(' ') },
+        React.createElement("div", { className: "timeline-bar__content", style: { height: barHeightPercent + "%" } })));
 };
 exports.default = exports.TimelineBar;
 //# sourceMappingURL=TimelineBar.js.map

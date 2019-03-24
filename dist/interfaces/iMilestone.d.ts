@@ -3,5 +3,8 @@ export default interface iMilestone {
     title: string;
     version: string;
     description?: React.ReactNode;
-    complete?: boolean;
+    /**
+     * Percent complete, or true for 100%
+     */
+    complete?: boolean | number;
 }

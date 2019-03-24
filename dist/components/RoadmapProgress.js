@@ -80,9 +80,20 @@ var RoadmapProgress = /** @class */ (function (_super) {
         if (!current) {
             return props;
         }
+        // determines whether a milestone is 100% complete or not
+        var completePercent = function (complete) {
+            if (!complete) {
+                return 0;
+            }
+            if (complete === true) {
+                return 100;
+            }
+            return complete;
+        };
+        var isComplete = function (milestone) { return completePercent(milestone.complete) >= 100; };
         // whether current milestone, and all previous ones, are complete
-        var generationallyCompleteReducer = function (prev, current) { return prev && current.complete; };
-        var isGenerationallyComplete = (current.complete && milestones.slice(index).reduce(generationallyCompleteReducer, true));
+        var generationallyCompleteReducer = function (prev, current) { return prev && isComplete(current); };
+        var isGenerationallyComplete = (isComplete(current) && milestones.slice(index).reduce(generationallyCompleteReducer, true));
         // @see test for more verbosity
         if (!previous) {
             props.backgroundRoundedStart = true;
@@ -90,21 +101,23 @@ var RoadmapProgress = /** @class */ (function (_super) {
         if (!next) {
             props.backgroundRoundedEnd = true;
         }
-        if (current.complete) {
+        if (completePercent(current.complete) > 0) {
+            props.barHeightPercent = completePercent(current.complete);
             if (isGenerationallyComplete) {
                 props.barType = 'complete';
             }
             else {
                 props.barType = 'pending';
             }
-            if (!previous || (previous && !previous.complete)) {
+            if (!previous || (completePercent(current.complete) < 100) || (previous && completePercent(previous.complete) < 1)) {
+                // if (!previous || (previous && !isComplete(previous))) {
                 props.barRoundedStart = true;
             }
-            if (!next || (next && !next.complete)) {
+            if (!next || (next && !isComplete(next))) {
                 props.barRoundedEnd = true;
             }
         }
-        if (isGenerationallyComplete && (!previous || !previous.complete)) {
+        if (isGenerationallyComplete && (!previous || !isComplete(previous))) {
             props.peakHighlight = true;
         }
         return props;
