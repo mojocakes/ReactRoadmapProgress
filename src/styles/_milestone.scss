@@ -2,10 +2,13 @@
     display: flex;
 
     &--complete {
-        .milestone__title,
-        .milestone__version {
-            color: $colorBlack;
+        .milestone__content {
+            opacity: 1;
         }
+        // .milestone__title,
+        // .milestone__version {
+        //     color: $colorBlack;
+        // }
     }
 
     &__timeline {
@@ -31,16 +34,17 @@
 
     &__content {
         padding: 20px;
+        opacity: 0.5;
     }
 
     &__title {
         margin: 0;
-        color: darken($colorGrey, 30%)
+        // color: darken($colorGrey, 30%)
     }
 
     &__version {
         font-size: 0.8em;
         font-weight: 600;
-        color: darken($colorGrey, 20%);
+        // color: darken($colorGrey, 20%);
     }
 }

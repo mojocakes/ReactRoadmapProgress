@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // > components
-import RoadmapProgress from '../dist';
+import RoadmapProgress from '@/components/RoadmapProgress';
 
 /**
  * Renders demo app to the DOM
@@ -14,7 +14,14 @@ function bootstrap(): void {
         {
             title: 'Launch Company',
             version: '0.0.1',
-            description: <p>Easy, right 🤷‍♂️</p>,
+            // description: <p>Easy, right 🤷‍♂️</p>,
+            description: (
+                <ul>
+                    <li>Item one</li>
+                    <li>Item two</li>
+                    <li>Item three</li>
+                </ul>
+            ),
             complete: true,
         },
         {
